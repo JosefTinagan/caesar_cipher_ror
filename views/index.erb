@@ -1,19 +1,54 @@
 <html>
 <head>
-		
+	<link rel="stylesheet" href="bootstrap.min.css">
+<style>
+h1{
+	text-align: center;
+}
+body{
+	background-color: black;
+	color: white;
+}
+</style>
 </head>
 <body>
-	<h1>Caesar Cipher</h1>
-	<form action="/">
-		<label for="word">Input a word:</label>
-		<input type="text" name="word">
-		<br>
-		<label for="shift">Enter a number to shift the words</label>
-		<input type="text" name="shift">
-		<br>
-		<input type="submit" name="word!">
-	</form>
-	<p>Your word is <%= @word %></p>
-	<p>Your ciphered word is <%= @ciphered_word %></p>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<h1>Caesar Cipher</h1>
+			</div>
+		</div>
+
+		<form class="form-horizontal">
+			<div class="form-group">
+				<label for="inputWord" class="col-sm-2 control-label">Word</label>
+				<div class="col-sm-10">
+					<input type="text" name="word" class="form-control" id="inputWord" placeholder="Input a word to cipher here...">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="inputShift" class="col-sm-2 control-label">Number</label>
+				<div class="col-sm-10">
+					<input type="text" name="shift" class="form-control" id="inputShift" placeholder="Input a number to shift">
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<button class="btn btn-primary" type="submit">Submit</button>
+				</div>
+			</div>
+		</form>
+
+		<div class="row">
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+				<p>Your word is:</p>
+				<h2><%= @word %></h2>
+			</div>
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+				<p>Your ciphered word is:</p>
+				<h2><%= @ciphered_word %></h2>
+			</div>
+		</div>
+	</div>
 </body>
 </html>
